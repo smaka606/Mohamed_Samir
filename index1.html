@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تيم الرواد - الرعاية الطبية</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>صيدلية الرواد</h1>
+            <h3>للرعاية الطبية</h3>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#about">حولنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="#ask-doctor">اسأل طبيب</a></li>
+                <li><a href="#pharmacy">صيدليتنا</a></li><br>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <h2>مرحبا بك في تيم الرواد</h2>
+        <p>نحن نقدم خدمات الرعاية الطبية الأفضل لك ولعائلتك.</p>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>خدماتنا</h2>
+            <div class="service-box">
+                <div class="service">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>استشارة طبية</h3>
+                            <p>احصل على استشارات طبية متخصصة من خبراء في المجال.</p>
+                            <button class="service-button">تعرف على المزيد</button>
+                        </div>
+                    </div>
+                    <h3>استشارة طبية</h3>
+                    <p>احصل على استشارات طبية متخصصة من خبراء في المجال.</p>
+                </div>
+                <div class="service">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>رعاية منزلية</h3>
+                            <p>خدمات رعاية منزلية تناسب احتياجاتك الشخصية.</p>
+                            <button class="service-button">تعرف على المزيد</button>
+                        </div>
+                    </div>
+                    <h3>رعاية منزلية</h3>
+                    <p>خدمات رعاية منزلية تناسب احتياجاتك الشخصية.</p>
+                </div>
+                <div class="service">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>فحوصات مخبرية</h3>
+                            <p>فحوصات دقيقة ومفصلة لحالتك الصحية.</p>
+                            <button class="service-button">تعرف على المزيد</button>
+                        </div>
+                    </div>
+                    <h3>فحوصات مخبرية</h3>
+                    <p>فحوصات دقيقة ومفصلة لحالتك الصحية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>حولنا</h2>
+        <p>تيم الرواد هو فريق متخصص في تقديم الرعاية الطبية الشاملة والمهنية.</p>
+    </section>
+
+    <section id="ask-doctor" class="ask-doctor">
+        <h2>اسأل طبيب</h2>
+        <p>لديك سؤال طبي؟ استخدم النموذج أدناه لإرسال سؤالك إلى طبيبنا.</p>
+        <form id="ask-doctor-form" action="send_mail.php" method="POST">
+            <input type="text" name="name" placeholder="الاسم" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+            <textarea name="message" placeholder="اكتب سؤالك هنا..." required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <section id="pharmacy">
+        <div class="container">
+            <h2>صيدليتنا</h2>
+
+            <div class="category-filter">
+                <button class="category-button" data-category="all">الكل</button>
+                <button class="category-button" data-category="pain-relief">مسكنات الألم</button>
+                <button class="category-button" data-category="antibiotics">المضادات الحيوية</button>
+                <button class="category-button" data-category="vitamins">الفيتامينات والمكملات</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="ابحث عن دواء...">
+                <button id="search-button">بحث</button>
+            </div>
+
+            <div class="product-grid">
+                <!-- المنتجات الجديدة -->
+                <div class="product" data-category="pain-relief">
+                    <img src="mosaken1.jpg" alt="مسكن " class="painkiller-image">
+                    <h3>مسكن </h3>
+                    <p>وصف قصير للدواء.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="pain-relief">
+                    <img src="mosaken2.jpg" alt="مسكن 2" class="painkiller-image">
+                    <h3>مسكن 2</h3>
+                    <p>وصف قصير للدواء.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <!-- المنتجات القديمة -->
+                <div class="product" data-category="pain-relief">
+                    <img src="mosaken3.jpg" alt="مسكن ألم 1" class="product-image">
+                    <h3>مسكن</h3>
+                    <p>مسكن فعال للألم يساعد في تخفيف الأوجاع.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="pain-relief">
+                    <img src="mosaken4.jpg" alt="مسكن ألم " class="product-image">
+                    <h3>مسكن الألم</h3>
+                    <p>مسكن قوي للألم مع تأثير طويل الأمد.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="antibiotics">
+                    <img src="modd1.jpg" alt="مضاد حيوي 1" class="product-image">
+                    <h3>مضاد حيوي 1</h3>
+                    <p>مضاد حيوي يساعد في مكافحة العدوى البكتيرية.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="antibiotics">
+                    <img src="modd2.jpg" alt="مضاد حيوي 2" class="product-image">
+                    <h3>مضاد حيوي 2</h3>
+                    <p>فعالية عالية ضد مجموعة واسعة من البكتيريا.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="vitamins">
+                    <img src="vetaminC.jpg" alt="فيتامين C" class="product-image">
+                    <h3>فيتامين C</h3>
+                    <p>فيتامين C مهم لدعم جهاز المناعة.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+                <div class="product" data-category="vitamins">
+                    <img src="vetaminD.jpg" alt="فيتامين D" class="product-image">
+                    <h3>فيتامين D</h3>
+                    <p>يساعد في دعم صحة العظام.</p>
+                    <button class="add-to-cart-button">أضف إلى السلة</button>
+                </div>
+            </div>
+
+            <div id="shopping-cart">
+                <h2>سلة التسوق</h2>
+                <ul id="cart-items"></ul>
+                <button id="checkout-button">الدفع</button>
+            </div>
+
+            <!-- نظام التوصيل -->
+            <div id="delivery-options">
+                <h2>نظام التوصيل</h2>
+                <label for="delivery-time">اختر موعد التوصيل:</label>
+                <select id="delivery-time">
+                    <option value="morning">الصباح</option>
+                    <option value="afternoon">بعد الظهر</option>
+                    <option value="evening">المساء</option>
+                </select>
+            </div>
+
+            <!-- خيارات الدفع -->
+            <div id="payment-options">
+                <h2>طرق الدفع</h2>
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card">
+                    بطاقة ائتمان
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="paypal">
+                    بايبال
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="cash">
+                    نقداً عند التوصيل
+                </label>
+                <button class="cta-button">أكمل الشراء</button>
+            </div>
+
+            <!-- مراجعات المستخدمين -->
+            <div id="reviews-section">
+                <h2>مراجعات المستخدمين</h2>
+                <div class="review">
+                    <p><strong>محمد:</strong> دواء ممتاز وسريع المفعول.</p>
+                </div>
+                <div class="review">
+                    <p><strong>سارة:</strong> خدمة رائعة ودواء بجودة عالية.</p>
+                </div>
+                <form id="review-form">
+                    <input type="text" id="review-name" placeholder="اسمك" required>
+                    <textarea id="review-text" placeholder="اكتب مراجعتك هنا..." required></textarea>
+                    <button type="submit">إرسال المراجعة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>اتصل بنا</h2>
+        <div class="contact-info">
+            <p>للتواصل معنا، يمكنك استخدام الروابط التالية:</p>
+            <ul>
+                <li><a href="https://discord.gg/ZBrqM5a3" target="_blank">انضم إلى خادم Discord</a></li>
+                <li><a href="mailto:pioneersteam45@gmail.com">إرسال بريد إلكتروني إلى pioneersteam45@gmail.com</a></li>
+                <li><a href="https://www.facebook.com/groups/1542433896630030/?ref=share&mibextid=NSMWBT" target="_blank">تواصل معنا على Facebook</a></li>
+                <li>رقم الهاتف (قريبا)</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 تيم الرواد. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        new Crate({
+            server: 'YOUR_SERVER_ID', // استبدل YOUR_SERVER_ID بـ Server ID الخاص بك
+            channel: 'https://discord.gg/ZBrqM5a3', // استبدل YOUR_CHANNEL_ID بـ Channel ID الخاص بك
+            shard: 0,
+            style: {
+                position: 'fixed',
+                bottom: '20px',
+                right: '20px',
+                width: '350px',
+                height: '500px'
+            }
+        });
+    </script>
+     <button class="to-top" id="toTopBtn">⬆</button>
+     <!-- روابط JavaScript في الأسفل لتحسين الأداء -->
+     <script src="scripts.min.js"></script>
+     <script>
+         const toTopBtn = document.getElementById('toTopBtn');
+         window.addEventListener('scroll', () => {
+             if (window.scrollY > 100) {
+                 toTopBtn.style.display = 'block';
+             } else {
+                 toTopBtn.style.display = 'none';
+             }
+         });
+         toTopBtn.addEventListener('click', () => {
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+     </script>
+</body>
+</html>
